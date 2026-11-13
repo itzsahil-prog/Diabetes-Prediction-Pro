@@ -1,0 +1,296 @@
+{
+  "best_model_name": "LogisticRegression",
+  "features": [
+    "Pregnancies",
+    "Glucose",
+    "BloodPressure",
+    "SkinThickness",
+    "Insulin",
+    "BMI",
+    "DiabetesPedigreeFunction",
+    "Age"
+  ],
+  "screen_results": {
+    "LogisticRegression": {
+      "test_roc_auc": 0.8416791251384275,
+      "test_f1": 0.6611869812404667,
+      "test_precision": 0.7608431999539077,
+      "test_recall": 0.5889258028792912,
+      "test_accuracy": 0.789870718379315
+    },
+    "RandomForest": {
+      "test_roc_auc": 0.8244545957918051,
+      "test_f1": 0.6233110022507613,
+      "test_precision": 0.6850406504065041,
+      "test_recall": 0.5747508305647842,
+      "test_accuracy": 0.757323737171798
+    },
+    "GradientBoosting": {
+      "test_roc_auc": 0.8101674972314508,
+      "test_f1": 0.6231325739448408,
+      "test_precision": 0.6582242996877143,
+      "test_recall": 0.5935769656699889,
+      "test_accuracy": 0.7491803278688525
+    },
+    "XGBoost": {
+      "test_roc_auc": 0.7805038759689923,
+      "test_f1": 0.6103668959766522,
+      "test_precision": 0.6372905989927267,
+      "test_recall": 0.588704318936877,
+      "test_accuracy": 0.7393842463014794
+    },
+    "SVM": {
+      "test_roc_auc": 0.8235534330011074,
+      "test_f1": 0.6349287649794023,
+      "test_precision": 0.7343589743589743,
+      "test_recall": 0.5702104097452936,
+      "test_accuracy": 0.7703185392509663
+    }
+  },
+  "tuned_params": {
+    "LogisticRegression": {
+      "model__solver": "lbfgs",
+      "model__penalty": "l2",
+      "model__C": 0.1
+    },
+    "RandomForest": {
+      "model__n_estimators": 300,
+      "model__min_samples_split": 4,
+      "model__min_samples_leaf": 2,
+      "model__max_features": "sqrt",
+      "model__max_depth": 5
+    },
+    "SVM": {
+      "model__kernel": "rbf",
+      "model__gamma": 0.01,
+      "model__C": 1
+    }
+  },
+  "tuned_cv_roc_auc": {
+    "LogisticRegression": 0.8431229235880398,
+    "RandomForest": 0.8374238648947951,
+    "SVM": 0.845390365448505
+  },
+  "test_results_pre_calibration": {
+    "LogisticRegression": {
+      "roc_auc": 0.8135185185185185,
+      "f1": 0.5346534653465347,
+      "precision": 0.574468085106383,
+      "recall": 0.5,
+      "accuracy": 0.6948051948051948,
+      "confusion_matrix": [
+        [
+          80,
+          20
+        ],
+        [
+          27,
+          27
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.7476635514018691,
+          "recall": 0.8,
+          "f1-score": 0.7729468599033816,
+          "support": 100.0
+        },
+        "1": {
+          "precision": 0.574468085106383,
+          "recall": 0.5,
+          "f1-score": 0.5346534653465347,
+          "support": 54.0
+        },
+        "accuracy": 0.6948051948051948,
+        "macro avg": {
+          "precision": 0.661065818254126,
+          "recall": 0.65,
+          "f1-score": 0.6538001626249581,
+          "support": 154.0
+        },
+        "weighted avg": {
+          "precision": 0.6869326736099455,
+          "recall": 0.6948051948051948,
+          "f1-score": 0.6893894358379938,
+          "support": 154.0
+        }
+      }
+    },
+    "RandomForest": {
+      "roc_auc": 0.8101851851851851,
+      "f1": 0.56,
+      "precision": 0.6086956521739131,
+      "recall": 0.5185185185185185,
+      "accuracy": 0.7142857142857143,
+      "confusion_matrix": [
+        [
+          82,
+          18
+        ],
+        [
+          26,
+          28
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.7592592592592593,
+          "recall": 0.82,
+          "f1-score": 0.7884615384615384,
+          "support": 100.0
+        },
+        "1": {
+          "precision": 0.6086956521739131,
+          "recall": 0.5185185185185185,
+          "f1-score": 0.56,
+          "support": 54.0
+        },
+        "accuracy": 0.7142857142857143,
+        "macro avg": {
+          "precision": 0.6839774557165862,
+          "recall": 0.6692592592592592,
+          "f1-score": 0.6742307692307692,
+          "support": 154.0
+        },
+        "weighted avg": {
+          "precision": 0.7064642282033586,
+          "recall": 0.7142857142857143,
+          "f1-score": 0.7083516483516483,
+          "support": 154.0
+        }
+      }
+    },
+    "SVM": {
+      "roc_auc": 0.809074074074074,
+      "f1": 0.5263157894736842,
+      "precision": 0.6097560975609756,
+      "recall": 0.46296296296296297,
+      "accuracy": 0.7077922077922078,
+      "confusion_matrix": [
+        [
+          84,
+          16
+        ],
+        [
+          29,
+          25
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.7433628318584071,
+          "recall": 0.84,
+          "f1-score": 0.7887323943661971,
+          "support": 100.0
+        },
+        "1": {
+          "precision": 0.6097560975609756,
+          "recall": 0.46296296296296297,
+          "f1-score": 0.5263157894736842,
+          "support": 54.0
+        },
+        "accuracy": 0.7077922077922078,
+        "macro avg": {
+          "precision": 0.6765594647096913,
+          "recall": 0.6514814814814814,
+          "f1-score": 0.6575240919199407,
+          "support": 154.0
+        },
+        "weighted avg": {
+          "precision": 0.6965137172346324,
+          "recall": 0.7077922077922078,
+          "f1-score": 0.6967161822610303,
+          "support": 154.0
+        }
+      }
+    }
+  },
+  "test_results_calibrated": {
+    "roc_auc": 0.8065740740740741,
+    "f1": 0.5436893203883495,
+    "precision": 0.5714285714285714,
+    "recall": 0.5185185185185185,
+    "accuracy": 0.6948051948051948,
+    "confusion_matrix": [
+      [
+        79,
+        21
+      ],
+      [
+        26,
+        28
+      ]
+    ],
+    "classification_report": {
+      "0": {
+        "precision": 0.7523809523809524,
+        "recall": 0.79,
+        "f1-score": 0.7707317073170732,
+        "support": 100.0
+      },
+      "1": {
+        "precision": 0.5714285714285714,
+        "recall": 0.5185185185185185,
+        "f1-score": 0.5436893203883495,
+        "support": 54.0
+      },
+      "accuracy": 0.6948051948051948,
+      "macro avg": {
+        "precision": 0.6619047619047619,
+        "recall": 0.6542592592592593,
+        "f1-score": 0.6572105138527113,
+        "support": 154.0
+      },
+      "weighted avg": {
+        "precision": 0.6889301175015461,
+        "recall": 0.6948051948051948,
+        "f1-score": 0.6911194417706376,
+        "support": 154.0
+      }
+    }
+  },
+  "feature_medians": {
+    "Pregnancies": 3.0,
+    "Glucose": 117.0,
+    "BloodPressure": 72.0,
+    "SkinThickness": 29.0,
+    "Insulin": 125.0,
+    "BMI": 32.3,
+    "DiabetesPedigreeFunction": 0.3725,
+    "Age": 29.0
+  },
+  "feature_ranges": {
+    "Pregnancies": [
+      0.0,
+      17.0
+    ],
+    "Glucose": [
+      44.0,
+      199.0
+    ],
+    "BloodPressure": [
+      24.0,
+      122.0
+    ],
+    "SkinThickness": [
+      7.0,
+      99.0
+    ],
+    "Insulin": [
+      14.0,
+      846.0
+    ],
+    "BMI": [
+      18.2,
+      67.1
+    ],
+    "DiabetesPedigreeFunction": [
+      0.078,
+      2.42
+    ],
+    "Age": [
+      21.0,
+      81.0
+    ]
+  }
+}
